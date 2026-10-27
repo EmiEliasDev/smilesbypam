@@ -1,0 +1,38 @@
+# Clinic deploy. Builds EmiEliasDev/booking-app with this repo's branding
+# (clinic.config.json + public/) and publishes it to this repo's Pages site.
+# Site URL: https://emieliasdev.github.io/<this-repo-name>/
+#
+# One-time setup: see README.md. Don't edit this file per clinic.
+# The @ref on `uses:` and `app_ref` must match.
+
+name: Deploy
+
+on:
+  push:
+    branches: [main]          # branding/config change in this repo
+  workflow_dispatch:          # manual redeploy
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    uses: EmiEliasDev/booking-app/.github/workflows/build-clinic.yml@main
+    with:
+      clinic_id: ${{ vars.CLINIC_ID }}
+      # DEMO_MODE=true (repo variable) builds the in-browser demo: fake data, no Supabase.
+      # Set only on EmiEliasDev/clinic-web; variables don't copy to repos made from the template.
+      demo: ${{ vars.DEMO_MODE == 'true' }}
+      base_path: /${{ github.event.repository.name }}/
+      app_ref: main
+      branding_repo: ${{ github.repository }}
+      branding_ref: ${{ github.sha }}
+    secrets:
+      VITE_SUPABASE_URL: ${{ secrets.VITE_SUPABASE_URL }}
+      VITE_SUPABASE_ANON_KEY: ${{ secrets.VITE_SUPABASE_ANON_KEY }}

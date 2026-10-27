@@ -1,0 +1,20 @@
+{
+  "name": "Tu Clínica",
+  "shortName": "Clínica",
+  "logo": "",
+  "logoAlt": "Logo de Tu Clínica",
+  "locale": "es-MX",
+  "themeColor": "#6b3a96",
+  "accentSoft": "#f3eaf8",
+  "accentDeep": "#4e2870",
+  "phonePlaceholder": "686 123 4567",
+  "services": [
+    { "id": "initial", "label": "Primera cita (60 min)" },
+    { "id": "followup", "label": "Seguimiento (45 min)" },
+    { "id": "short", "label": "Cita breve (30 min)" }
+  ],
+  "strings": {},
+  "contact": {
+    "email": "clinica@example.com"
+  }
+}
