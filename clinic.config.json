@@ -1,20 +1,18 @@
 {
-  "name": "Tu Clínica",
-  "shortName": "Clínica",
-  "logo": "",
-  "logoAlt": "Logo de Tu Clínica",
+  "name": "Smiles by Pam",
+  "shortName": "Smiles by Pam",
+  "logo": "logo.png",
+  "logoAlt": "Smiles by Pam, odontopediatría",
   "locale": "es-MX",
-  "themeColor": "#6b3a96",
-  "accentSoft": "#f3eaf8",
-  "accentDeep": "#4e2870",
+  "themeColor": "#4b5bd6",
+  "accentSoft": "#f0f1fb",
+  "accentDeep": "#293275",
   "phonePlaceholder": "686 123 4567",
   "services": [
-    { "id": "initial", "label": "Primera cita (60 min)" },
-    { "id": "followup", "label": "Seguimiento (45 min)" },
-    { "id": "short", "label": "Cita breve (30 min)" }
+    { "id": "initial", "label": "Evaluación inicial (45 min)" },
+    { "id": "followup", "label": "Control / seguimiento (30 min)" },
+    { "id": "short", "label": "Urgencia infantil (20 min)" }
   ],
   "strings": {},
-  "contact": {
-    "email": "clinica@example.com"
-  }
+  "contact": { "email": "clinica@example.com" }
 }
